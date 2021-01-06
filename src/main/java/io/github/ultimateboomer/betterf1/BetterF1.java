@@ -18,6 +18,6 @@ public class BetterF1 implements ClientModInitializer {
 	}
 
 	public static boolean isHidden(boolean hudHidden) {
-		return hudHidden || state.equals(HUDState.NO_HUD);
+		return hudHidden && !state.equals(HUDState.NO_HUD);
 	}
 }

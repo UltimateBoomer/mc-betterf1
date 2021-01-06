@@ -6,10 +6,8 @@
   "mixins": [
   ],
   "client": [
-    "InGameHudMixin",
     "KeyboardMixin",
-    "GameRendererMixin",
-    "ToastManagerMixin"
+    "GameRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1

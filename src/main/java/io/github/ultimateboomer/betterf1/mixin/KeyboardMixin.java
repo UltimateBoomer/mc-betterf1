@@ -22,7 +22,8 @@ public class KeyboardMixin {
     public void onF1Key(CallbackInfo ci) {
         BetterF1.state = BetterF1.state.next();
 
-        client.options.hudHidden = BetterF1.state.equals(HUDState.ALL_HIDDEN);
+        // Seems most safe
+        client.options.hudHidden = !BetterF1.state.equals(HUDState.ALL_VISIBLE);
         ci.cancel();
     }
 }

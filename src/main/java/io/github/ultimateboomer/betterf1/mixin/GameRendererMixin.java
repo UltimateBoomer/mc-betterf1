@@ -12,9 +12,18 @@ public class GameRendererMixin {
     /**
      * @reason Override vanilla F1 behavior
      */
-    @Redirect(method = "shouldRenderBlockOutline", at = @At(value = "FIELD",
+    @Redirect(method = "renderHand", at = @At(value = "FIELD",
             target = "Lnet/minecraft/client/options/GameOptions;hudHidden:Z"))
-    private boolean onShouldRenderBlockOutline(GameOptions options) {
+    private boolean onRenderHand(GameOptions options) {
+        return BetterF1.isHidden(options.hudHidden);
+    }
+
+    /**
+     * @reason Override vanilla F1 behavior
+     */
+    @Redirect(method = "render", at = @At(value = "FIELD",
+            target = "Lnet/minecraft/client/options/GameOptions;hudHidden:Z"))
+    private boolean onRender(GameOptions options) {
         return BetterF1.isHidden(options.hudHidden);
     }
 }
