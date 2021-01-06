@@ -1,12 +1,15 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.fabricmc.example.mixin",
+  "package": "io.github.ultimateboomer.betterf1.mixin",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
   ],
   "client": [
-    "ExampleMixin"
+    "InGameHudMixin",
+    "KeyboardMixin",
+    "GameRendererMixin",
+    "ToastManagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1
