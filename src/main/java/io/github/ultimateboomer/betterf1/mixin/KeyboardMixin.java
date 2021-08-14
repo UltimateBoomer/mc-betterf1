@@ -17,8 +17,12 @@ public class KeyboardMixin {
     @Final
     private MinecraftClient client;
 
-    @Inject(method = "onKey", at = @At(value = "FIELD",
-            target = "Lnet/minecraft/client/options/GameOptions;hudHidden:Z"), cancellable = true)
+    @Inject(method = "onKey",
+            at = @At(
+                value = "FIELD",
+                target = "Lnet/minecraft/client/option/GameOptions;hudHidden:Z"
+            ),
+            cancellable = true)
     public void onF1Key(CallbackInfo ci) {
         BetterF1.state = BetterF1.state.next();
 
